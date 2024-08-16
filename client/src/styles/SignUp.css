@@ -1,0 +1,85 @@
+.signup-container {
+   /* margin-top: 50px; */
+  padding: 50px; 
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 5px 5px 8px rgba(171, 169, 169, 0.441) ,inset 3px 3px 8px rgba(171, 169, 169, 0.441);
+}
+
+.left-container {
+  background-color: #007bff;
+  color: white;
+  padding: 40px;
+  border-radius: 10px 0 0 10px;
+  text-align: left;
+}
+
+.left-container h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.left-container p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.learn-more-button {
+  background-color: #0056b3;
+  border: none;
+}
+
+.learn-more-button:hover {
+  background-color: #004085;
+}
+
+.right-container {
+  padding: 40px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.245);
+}
+
+.right-container h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.signup-button {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #e5682e, #ff0000);
+  border: none;
+}
+
+.social-icons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.icon {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.facebook-icon:hover {
+  color: #3b5998;
+}
+
+.twitter-icon:hover {
+  color: #00acee;
+}
+
+.google-icon:hover {
+  color: #db4437;
+}
+.user-icon {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 1rem;
+  display: block;
+  text-align: center;
+}
+
