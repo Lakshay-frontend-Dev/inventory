@@ -1,5 +1,5 @@
 import "../styles/SignUp.css";
-import signup1 from "../assets/signup1.jpg";
+import signup1 from "../assets/signup.png";
 import React, { useState } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
