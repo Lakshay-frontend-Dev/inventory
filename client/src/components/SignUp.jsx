@@ -1,5 +1,5 @@
 import "../styles/SignUp.css";
-import signup1 from "../assets/signup.png";
+import signup from "../assets/signup.jpg";
 import React, { useState } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
@@ -72,100 +72,98 @@ const SignUp = () => {
   };
   return (
     <div
+      className="main "
       style={{
-        backgroundImage: `url(${signup1})`,
-        height: "100vh",
-        width: "100%",
         display: "grid",
         placeItems: "center",
+        backgroundImage: `url(${signup})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
-      <Container className="signup-container bg-transparent">
-        <Row>
-          {/* Left Side */}
-          <Col md={8} className="left-container bg-transparent">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
-              <h2>Welcome!</h2>
-              <p>
-                Welcome to our vibrant community! By signing up, you unlock
-                access to a world of opportunities tailored just for you.
-                Whether you're here to explore new skills, connect with
-                like-minded individuals, or simply enjoy exclusive content, our
-                platform is designed to make your journey enjoyable and
-                rewarding.
-              </p>
+        <Container className="signup-container  bg-transparent">
+          <Row>
+            <Col md={7} className="left-container bg-transparent">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+              >
+                <h1 className="md:text-7xl sm:text-5xl xsm:text-3xl">
+                  Welcome!
+                </h1>
+                <div className="w-[17%] border-b-2" />
+                <p className="mt-4">
+                  Welcome to our vibrant community! By signing up, you unlock
+                  access to a world of opportunities tailored just for you.
+                </p>
 
-              <Button variant="primary" className="learn-more-button">
-                Learn More
-              </Button>
-            </motion.div>
-          </Col>
+                <Button className="learn-more-button">Learn More</Button>
+              </motion.div>
+            </Col>
 
-          {/* Right Side */}
-          <Col md={4} className="right-container">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
+            {/* Right Side */}
+            <Col md={5} className="right-container mt-2">
               <FaUser className="user-icon" />
-              <h1 className="font-semibold">Sign Up</h1>
-              <Form onSubmit={handleSignUp}>
-                <Form.Group controlId="formEmail">
-                  <Form.Label>Email</Form.Label>
-                  <Form.Control
-                    type="email"
-                    placeholder="Enter email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    isInvalid={!!errors.email}
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    {errors.email}
-                  </Form.Control.Feedback>
-                </Form.Group>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+              >
+                <h1 className="font-semibold text-white ">Sign Up </h1>
+                <Form onSubmit={handleSignUp}>
+                  <Form.Group controlId="formEmail">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                      type="email"
+                      placeholder="Enter email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      isInvalid={!!errors.email}
+                      className="mb-2"
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      {errors.email}
+                    </Form.Control.Feedback>
+                  </Form.Group>
 
-                <Form.Group controlId="formPassword">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control
-                    type="password"
-                    placeholder="Password"
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    isInvalid={!!errors.password}
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    {errors.password}
-                  </Form.Control.Feedback>
-                </Form.Group>
+                  <Form.Group controlId="formPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                      type="password"
+                      placeholder="Password"
+                      name="password"
+                      value={formData.password}
+                      onChange={handleChange}
+                      isInvalid={!!errors.password}
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      {errors.password}
+                    </Form.Control.Feedback>
+                  </Form.Group>
 
-                <Button
-                  variant="success"
-                  type="submit"
-                  className="signup-button"
-                >
-                  Sign Up
-                </Button>
-              </Form>
+                  <Button
+                    variant="success"
+                    type="submit"
+                    className="signup-button"
+                  >
+                    Sign Up
+                  </Button>
+                </Form>
+                <div className="social-icons text-white">
+                  <FaFacebook className="icon facebook-icon" />
+                  <FaTwitter className="icon twitter-icon" />
+                  <FaGoogle className="icon google-icon" />
+                </div>
+              </motion.div>
+            </Col>
+          </Row>
 
-              <div className="social-icons text-white">
-                <FaFacebook className="icon facebook-icon" />
-                <FaTwitter className="icon twitter-icon" />
-                <FaGoogle className="icon google-icon" />
-              </div>
-            </motion.div>
-          </Col>
-        </Row>
-
-        {/* Toastify Container */}
-        <ToastContainer />
-      </Container>
+          {/* Toastify Container */}
+          <ToastContainer />
+        </Container>
     </div>
   );
 };

@@ -1,21 +1,31 @@
+.main {
+  /* background: linear-gradient(130deg,rgb(1, 1, 35),rgb(77, 5, 77), #8f0626, #2e5003); */
+  /* background-color: rgb(8, 10, 10); */
+  min-height: 100vh;
+  width: 100%;
+}
+
 .signup-container {
-   /* margin-top: 50px; */
-  padding: 50px; 
-  background-color: #f8f9fa;
+  border: 2px solid #f5da72;
+  /* margin-top: 50px; */
+  padding: 3rem;
+  /* background-color: #f8f9fa; */
   border-radius: 15px;
-  box-shadow: 5px 5px 8px rgba(171, 169, 169, 0.441) ,inset 3px 3px 8px rgba(171, 169, 169, 0.441);
+  box-shadow: 5px 5px 8px #f5da72, inset 3px 3px 8px #f5da72;
+  /* box-shadow: 10px 10px 8px rgba(226, 159, 3, 0.441) ,inset 3px 3px 8px rgba(204, 178, 9, 0.441); */
 }
 
 .left-container {
-  background-color: #007bff;
+  /* background-color: #007bff; */
   color: white;
-  padding: 40px;
+  padding-top: 3rem;
   border-radius: 10px 0 0 10px;
   text-align: left;
 }
 
-.left-container h2 {
-  font-size: 36px;
+.left-container h1 {
+  /* font-size: 2rem; */
+  font-weight: bolder;
   margin-bottom: 20px;
 }
 
@@ -34,9 +44,12 @@
 }
 
 .right-container {
-  padding: 40px;
+  color: white;
+  /* margin: 0.15rem; */
+  padding: 2rem;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.245);
+  background-color: rgba(33, 32, 32, 0.345);
+  /* background-color: #f5db7248; */
 }
 
 .right-container h1 {
@@ -47,16 +60,23 @@
 .signup-button {
   width: 100%;
   margin-top: 20px;
-  border-radius: 20px;
-  background: linear-gradient(90deg, #e5682e, #ff0000);
+  border-radius: 10px;
+  /* box-shadow: inset 1px 1px 4px #F5DA72; */
+  /* background: radial-gradient(red,green); */
+  background-color: #021212;
+  transition: 200ms linear;
   border: none;
 }
-
+.signup-button:hover {
+  background-color: #021212;
+  /* transform: scale(1.1); */
+  box-shadow: 2px 2px 8px #f5da72;
+}
 .social-icons {
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 20px;
 }
 
 .icon {
@@ -77,9 +97,10 @@
 }
 .user-icon {
   font-size: 3rem;
+  /* border: 2px solid black; */
+  padding: 2px;
   color: white;
   margin-bottom: 1rem;
-  display: block;
+  /* display: block; */
   text-align: center;
 }
-

@@ -1,9 +1,11 @@
 
 .colorful-navbar {
-  background: linear-gradient(90deg, #e52e71, #9b00ff);
+  /* background: linear-gradient(90deg, #e52e71, #9b00ff); */
+  background-color: #021616;
   color: white;
   padding: 0;
   margin: 0;
+  border-bottom: 3px solid #f5da72;
 }
 
 .navbar-brand {
@@ -33,4 +35,8 @@
 
 .shadow-sm {
   box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+}
+.nav-color
+{
+  color: #f5da72;
 }
