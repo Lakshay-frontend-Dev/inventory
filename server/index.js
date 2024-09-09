@@ -1,33 +1,28 @@
 const express = require("express");
-const app = express();
-const port = 8000;
 const cors = require("cors");
-const mongoose = require("mongoose");
-// const { connectToMongoDB } = require("./connection");
+const bookRoutes = require("./routes/bookRoutes");
+const authRoutes = require("./routes/authRoutes");
 
-//middleware
+// const connectDB = require("./config/db");
+
+const app = express();
+const port = process.env.PORT || 5000;
+
+// Middleware
 app.use(cors());
 app.use(express.json());
+
+// Routes
+app.use("/api/books", bookRoutes);
+// app.use("/api/auth",authRoutes)
+
+// app.use("/api/auth",authRoutes)
+// connectDB()
+
 app.get("/", (req, res) => {
-  res.send("hello world");
+  res.send("Hell World!");
 });
-
-mongoose
-  .connect("mongodb://localhost:27017/inventory-backend")
-  .then(() => console.log("Mongodb connected"));
-
-const schema = mongoose.Schema({
-  name: String,
-  price: Number,
-  quantity: Number,
-});
-
-const Product = mongoose.model("Product", schema);
-
-// connectToMongoDB("mongodb://localhost:27017/inventory-backend").then(() =>
-//   console.log("Mongodb connected")
-// );
 
 app.listen(port, () => {
-  console.log("server started");
+  console.log(`App listening on port ${port}`);
 });

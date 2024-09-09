@@ -1,16 +1,29 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "../App";
-import Home from "../Home/Home";
+import Home from "../Home/home/Home";
 import Shop from "../Shop/Shop";
-import About from "../components/About";
-import Blog from "../components/Blog";
+import About from "../components/about/About";
 import SingleBook from "../Shop/SingleBook";
 import DasboardLayout from "../Dasboard/DasboardLayout";
-import Dasboard from "../Dasboard/Dasboard";
-import UploadBook from "../Dasboard/UploadBook";
-import ManageBook from "../Dasboard/ManageBook";
-import EditBook from "../Dasboard/EditBook";
-import SignUp from "../components/SignUp";
+import Dasboard from "../Dasboard/dashboard/Dasboard";
+import UploadBook from "../Dasboard/upload/UploadBook";
+import ManageBook from "../Dasboard/manage/ManageBook";
+import EditBook from "../Dasboard/edit/EditBook";
+import SignUp from "../components/signup/SignUp";
+import Login from "../components/login/Login";
+import PrivateRoute from "../privateRoute/PrivateRoute";
+import Logout from "../components/logout/Logout";
+import Cart from "../components/cart/Cart";
+import Recommendations from "../recommendations/Recommendations";
+import ArticleDetailDrVikas from "../recommendations/ArticleDetailDrVikas";
+import ArticleDetail4BestSelfhelp from "../recommendations/ArticleDetail4BestSelfhelp";
+import ArticleDetail5Unpopular from "../recommendations/ArticleDetail5Unpopular"
+import ArticleDetail3Mustreadselfhelp from "../recommendations/ArticleDetail3Mustreadselfhelp";
+import ArticleDetail5bookscontent from "../recommendations/ArticleDetail5bookscontent";
+import ArticleDetail5HindiNovels from "../recommendations/ArticleDetail5HindiNovels"
+import ForgotPassword from "../components/login/ForgotPassword";
+import Success from "../components/Success";
+import Cancel from "../components/Cancel";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +31,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/home",
+        path: "/",
         element: <Home />,
       },
       {
@@ -30,42 +43,93 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/blog",
-        element: <Blog />,
+        path: "/cart",
+        element: <Cart />,
       },
+      {
+        path: "/recommedation",
+        element: <Recommendations />,
+      },
+      {
+        path: "/articledetail/drvikas",
+        element: <ArticleDetailDrVikas />,
+      },
+      {
+        path: "/articledetail/selfhelp",
+        element: <ArticleDetail4BestSelfhelp />,
+      },
+      {
+        path: "/articledetail/fiction",
+        element: <ArticleDetail5Unpopular />,
+      },
+      {
+        path: "/articledetail/4best",
+        element: <ArticleDetail3Mustreadselfhelp />,
+      },
+      {
+        path: "/articledetail/contentcreators",
+        element: <ArticleDetail5bookscontent />,
+      },
+      {
+        path: "/articledetail/hindi",
+        element: <ArticleDetail5HindiNovels />,
+      },
+
       {
         path: "/book/:id",
         element: <SingleBook />,
-        // loader: ({ params }) => fetch(`https://localhost:5000/book/${params.id}`),
       },
     ],
   },
   {
-    path: "/admin/dashboard",
+    path: "/admin",
     element: <DasboardLayout />,
     children: [
       {
-        path: "/admin/dashboard",
-        element: <Dasboard />,
+        path: "/admin",
+        element: (
+          <PrivateRoute>
+            <Dasboard />
+          </PrivateRoute>
+        ),
       },
       {
-        path: "/admin/dashboard/upload",
+        path: "/admin/upload",
         element: <UploadBook />,
       },
       {
-        path: "/admin/dashboard/manage",
+        path: "/admin/manage",
         element: <ManageBook />,
       },
       {
-        path: "/admin/dashboard/edit-book/:id",
+        path: "/admin/manage/edit-book/:id",
         element: <EditBook />,
-        // loader: ({ params }) => fetch(`https://localhost:5000/book/${params.id}`),
+      },
+      {
+        path: "admin/logout",
+        element: <Logout />,
       },
     ],
   },
   {
     path: "/sign-up",
-    element: <SignUp />
+    element: <SignUp />,
+  },
+   {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/forgot",
+    element:<ForgotPassword/>
+  },
+  {
+    path: "/success",
+    element:<Success/>
+  },
+  {
+    path: "/cancel",
+    element:<Cancel/>
   }
 ]);
 
