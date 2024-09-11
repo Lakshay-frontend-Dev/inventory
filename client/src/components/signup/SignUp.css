@@ -136,3 +136,54 @@
   width: 100%;
   padding: 10px;
 }
+
+
+.verify-email-section {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.verify-email-section:hover {
+  transform: scale(1.02);
+}
+
+.verify-email-btn {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.verify-email-btn:hover {
+  background-color: #218838;
+  box-shadow: 0px 4px 10px rgba(0, 128, 0, 0.4);
+}
+
+.back-to-signup-btn {
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.back-to-signup-btn:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .verify-email-section {
+    padding: 15px;
+  }
+
+  .verify-email-btn {
+    min-width: 120px;
+    font-size: 0.9rem;
+  }
+
+  .back-to-signup-btn {
+    font-size: 0.9rem;
+  }
+}
